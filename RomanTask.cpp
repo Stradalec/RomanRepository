@@ -2,10 +2,9 @@
 * Автор: Калинин Андрей           *
 * Лабораторная №8                 *
 * Дата: 12.11.2023                *
-* Название: Арабские цифры        *
-* https://onlinegdb.com/dOMwqke-o *
+* Название: Арабские числа        *
+* https://onlinegdb.com/joQoh_PSz *
 **********************************/
-
 
 #include <iostream>
 #include <string>
@@ -26,18 +25,35 @@ int main() {
       int temp = 1000;
       romanNumber += "M";
       number = number - temp;
+      cout << number;
+      if (number  >= 900) {
+        romanNumber += "CM";
+        number = number - 900;
+      }
     } else if (number / 500 > 0) {
       int temp = 500;
       romanNumber += "D";
-      number = number - temp;    
+      number = number - temp;
+      if (number  >= 400) {
+        romanNumber += "CD";
+        number = number - 400;
+      }
     } else if (number / 100 > 0) {
       int temp = 100;
       romanNumber += "С";
-      number = number - temp;  
+      number = number - temp;
+      if (number  >= 90) {
+        romanNumber += "XC";
+        number = number - 90;
+      }
     } else if (number / 50 > 0) {
       int temp = 50;
       romanNumber += "L";
       number = number - temp;
+      if (number  >= 40) {
+        romanNumber += "XL";
+        number = number - 40;
+      }
     } else if (number / 10 > 0) {
       int temp = 10;
       romanNumber += "X";
